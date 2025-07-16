@@ -53,4 +53,9 @@ class HomeController extends Controller
     {
         return view('leafletjs.rectangle');
     }
+
+    public function layer()
+    {
+        return view('leafletjs.layer');
+    }
 }
