@@ -14,3 +14,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/simple-map', [App\Http\Controllers\HomeController::class, 'simpleMap'])->name('simple_map');
+Route::get('/markers', [App\Http\Controllers\HomeController::class, 'marker'])->name('marker');

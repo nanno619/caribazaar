@@ -28,4 +28,9 @@ class HomeController extends Controller
     {
         return view('leafletjs.simple-map');
     }
+
+    public function marker()
+    {
+        return view('leafletjs.marker');
+    }
 }

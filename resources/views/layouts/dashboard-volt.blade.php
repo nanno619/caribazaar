@@ -35,10 +35,8 @@
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('volt/src/assets/img/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ asset('volt/src/assets/img/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ asset('volt/src/assets/img/favicon/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('volt/src/assets/img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('volt/src/assets/img/favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('volt/src/assets/img/favicon/site.webmanifest') }}">
     <link rel="mask-icon" href="{{ asset('volt/src/assets/img/favicon/safari-pinned-tab.svg') }}" color="#ffffff">
     <meta name="msapplication-TileColor" content="#ffffff">
@@ -48,6 +46,8 @@
     <link type="text/css" href="{{ asset('volt/html&css/vendor/sweetalert2/dist/sweetalert2.min.css') }}"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <!-- Notyf -->
     <link type="text/css" href="{{ asset('volt/html&css/vendor/notyf/notyf.min.css') }}" rel="stylesheet">
 
@@ -55,7 +55,7 @@
     <link type="text/css" href="{{ asset('volt/html&css/css/volt.css') }}" rel="stylesheet">
 
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
-@yield('css')
+    @yield('css')
 </head>
 
 <body>
@@ -120,55 +120,42 @@
                 <li class="nav-item">
                     <a href="../../index.html" class="nav-link d-flex align-items-center">
                         <span class="sidebar-icon">
-                            <img src="{{ asset('volt/html&css/assets/img/brand/light.svg') }}" height="20"
-                                width="20" alt="Volt Logo">
+                            <img src="{{ asset('volt/html&css/assets/img/brand/light.svg') }}" height="20" width="20"
+                                alt="Volt Logo">
                         </span>
                         <span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
                     </a>
                 </li>
 
                 <!--SIDEBAR MENU-->
-                <li class="nav-item {{ Request::is('home') ?'active' : '' }}">
+                <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
                     <a href="{{ route('home') }}" class="nav-link">
                         <span class="sidebar-icon">
-                            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-                            </svg>
+                            <i class="fas fa-home"></i>
                         </span>
                         <span class="sidebar-text">Dashboard</span>
                     </a>
                 </li>
 
-
-                <li class="nav-item ">
-                    <a href="../../pages/settings.html" class="nav-link">
-                        <span class="sidebar-icon">
-                            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
+                <li class="nav-item
+                {{ Request::is('simple-map') ? 'active' : '' }}
+                ">
+                    <a href="{{ route('simple_map') }}" class="nav-link ">
+                        <span class="sidebar-icon ">
+                            <i class="fas fa-map"></i>
                         </span>
-                        <span class="sidebar-text">Settings</span>
+                        <span class="sidebar-text">Simple Map</span>
                     </a>
                 </li>
 
                 <li class="nav-item
-                {{ Request::is('simple-map') ?'active' : '' }}
+                {{ Request::is('markers') ? 'active' : '' }}
                 ">
-                    <a href="{{ route('simple_map') }}" class="nav-link ">
+                    <a href="{{ route('marker') }}" class="nav-link ">
                         <span class="sidebar-icon">
-                            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
+                            <i class="fas fa-map-marker"></i>
                         </span>
-                        <span class="sidebar-text">Simple Map</span>
+                        <span class="sidebar-text">Markers</span>
                     </a>
                 </li>
                 <!--SIDEBAR MENU-->
@@ -199,8 +186,8 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </span>
-                                <input type="text" class="form-control" id="topbarInputIconLeft"
-                                    placeholder="Search" aria-label="Search" aria-describedby="topbar-addon">
+                                <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Search"
+                                    aria-label="Search" aria-describedby="topbar-addon">
                             </div>
                         </form>
                         <!-- / Search form -->
@@ -209,8 +196,8 @@
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item dropdown">
                             <a class="nav-link text-dark notification-bell unread dropdown-toggle"
-                                data-unread-notifications="true" href="#" role="button"
-                                data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                data-unread-notifications="true" href="#" role="button" data-bs-toggle="dropdown"
+                                data-bs-display="static" aria-expanded="false">
                                 <svg class="icon icon-sm text-gray-900" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -394,9 +381,8 @@
                                     Support
                                 </a>
                                 <div role="separator" class="dropdown-divider my-1"></div>
-                                <a class="dropdown-item d-flex align-items-center"
-                                href="{{ route('logout') }}"
-                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 
                                     <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -494,8 +480,8 @@
             <div class="row">
                 <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
                     <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
-                            class="text-primary fw-normal" href="https://themesberg.com"
-                            target="_blank">Themesberg</a></p>
+                            class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
+                    </p>
                 </div>
                 <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
                     <!-- List -->
@@ -555,6 +541,7 @@
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/fontawesome.min.js"></script>
     @stack('javascript')
     <!-- Volt JS -->
     {{-- <script src="{{ asset('volt/hmtl&css/assets/js/volt.js') }}"></script> --}}
