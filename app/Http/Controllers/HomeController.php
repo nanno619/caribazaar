@@ -38,4 +38,9 @@ class HomeController extends Controller
     {
         return view('leafletjs.circle');
     }
+
+    public function polygon()
+    {
+        return view('leafletjs.polygon');
+    }
 }
