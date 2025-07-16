@@ -18,3 +18,4 @@ Route::get('/markers', [App\Http\Controllers\HomeController::class, 'marker'])->
 Route::get('/circles', [App\Http\Controllers\HomeController::class, 'circle'])->name('circle');
 Route::get('/polygon', [App\Http\Controllers\HomeController::class, 'polygon'])->name('polygon');
 Route::get('/polyline', [App\Http\Controllers\HomeController::class, 'polyline'])->name('polyline');
+Route::get('/rectangle', [App\Http\Controllers\HomeController::class, 'rectangle'])->name('rectangle');
