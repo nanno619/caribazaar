@@ -33,4 +33,9 @@ class HomeController extends Controller
     {
         return view('leafletjs.marker');
     }
+
+    public function circle()
+    {
+        return view('leafletjs.circle');
+    }
 }

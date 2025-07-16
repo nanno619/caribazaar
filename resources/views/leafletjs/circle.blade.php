@@ -16,7 +16,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Markers</div>
+                <div class="card-header">Circle</div>
                 <div class="card-body">
                     <div id="map"></div>
                 </div>
@@ -32,30 +32,27 @@
 </script>
 
 <script>
-    const map = L.map('map').setView([4.490726480711626, 108.08986853876691], 6);
+    const map = L.map('map').setView([2.9402422572381335, 101.708809698866], 11);
 
     const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    // maxZoom: 19,
+    maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    var iconMarker = L.icon({
-        iconUrl: '{{ asset('iconMarkers/marker.png') }}',
-        iconSize: [32, 32], // size of the icon
-    });
+    const circle = L.circle([2.945766192373161, 101.70045523647866], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+    }).addTo(map).bindPopup('Circle 1.');
 
-    var marker = L.marker([4.490726480711626, 108.08986853876691], {
-        icon: iconMarker,
-        draggable:true
-    })
-    .bindPopup('Tampilan pesan disini')
-    .addTo(map);
+    const circle2 = L.circle([2.9402422572381335, 101.708809698866], {
+    color: 'green',
+    fillColor: 'green',
+    fillOpacity: 0.5,
+    radius: 300
+    }).addTo(map).bindPopup('Circle 2.');
 
-    var marker2 = L.marker([2.9645329662050464, 101.72141906718817], {
-    icon: iconMarker,
-    // draggable:true
-    })
-    .bindPopup('Starbuck Conezion')
-    .addTo(map);
+
 </script>
 @endpush
