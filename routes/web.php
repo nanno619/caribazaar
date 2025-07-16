@@ -17,3 +17,4 @@ Route::get('/simple-map', [App\Http\Controllers\HomeController::class, 'simpleMa
 Route::get('/markers', [App\Http\Controllers\HomeController::class, 'marker'])->name('marker');
 Route::get('/circles', [App\Http\Controllers\HomeController::class, 'circle'])->name('circle');
 Route::get('/polygon', [App\Http\Controllers\HomeController::class, 'polygon'])->name('polygon');
+Route::get('/polyline', [App\Http\Controllers\HomeController::class, 'polyline'])->name('polyline');
