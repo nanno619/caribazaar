@@ -21,3 +21,4 @@ Route::get('/polyline', [App\Http\Controllers\HomeController::class, 'polyline']
 Route::get('/rectangle', [App\Http\Controllers\HomeController::class, 'rectangle'])->name('rectangle');
 Route::get('/layer', [App\Http\Controllers\HomeController::class, 'layer'])->name('layer');
 Route::get('/layer-group', [App\Http\Controllers\HomeController::class, 'layerGroup'])->name('layer_group');
+Route::get('/geojson', [App\Http\Controllers\HomeController::class, 'geoJson'])->name('geojson');

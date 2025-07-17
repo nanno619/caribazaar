@@ -63,4 +63,9 @@ class HomeController extends Controller
     {
         return view('leafletjs.layer-group');
     }
+
+    public function geoJson()
+    {
+        return view('leafletjs.geojson');
+    }
 }
