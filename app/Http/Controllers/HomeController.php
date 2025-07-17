@@ -58,4 +58,9 @@ class HomeController extends Controller
     {
         return view('leafletjs.layer');
     }
+
+    public function layerGroup()
+    {
+        return view('leafletjs.layer-group');
+    }
 }
